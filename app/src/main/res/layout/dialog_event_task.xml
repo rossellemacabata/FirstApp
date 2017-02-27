@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +9,16 @@
         android:text="@string/task_info"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25sp"
-        android:id="@+id/task_info" />
+        android:id="@+id/task_info"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginLeft="83dp"
+        android:layout_marginStart="83dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -21,23 +26,43 @@
         android:inputType="textPersonName"
         android:hint="@string/task_name"
         android:ems="10"
-        android:layout_marginTop="10dp"
-        android:id="@+id/task_nameID" />
+        android:layout_marginTop="71dp"
+        android:id="@+id/task_nameID"
+        android:layout_below="@+id/task_info"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:hint="@string/description"
-        android:layout_marginTop="5dp"
         android:ems="10"
-        android:id="@+id/desc_nameID" />
+        android:id="@+id/desc_nameID"
+        android:layout_below="@+id/task_nameID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Submit"
-        android:layout_width="match_parent"
+        android:text="Cancel"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:id="@+id/test_butt" />
+        android:id="@+id/cancel_button"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/desc_nameID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</LinearLayout>
+    <Button
+        android:text="OK"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ok_butt"
+        android:layout_alignBaseline="@+id/cancel_button"
+        android:layout_alignBottom="@+id/cancel_button"
+        android:layout_toRightOf="@+id/task_info"
+        android:layout_toEndOf="@+id/task_info" />
+
+</RelativeLayout>
